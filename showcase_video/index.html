@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="js/home.js"></script>
+        <title>Project Name – Subject Name</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="css/jquery.gridder.min.css" rel="stylesheet">
+        <link href="css/grid.css" rel="stylesheet">
+    </head>
+    <body class="algorithm" onload="init()">
+        <div class="wrapper headline">
+            <h1>Project Name<br>Subject Name</h1>
+            <h3>SoSe 20118, Prof. XX</h3>
+        </div>
+        <div class="clear"></div>
+        <div class="wrapper">
+            <ul class="gridder">
+                <!-- Grid Item 1 -->
+                <li class="gridder-list" data-griddercontent="#gridder-content-1">
+                    <img src="content/1/thumbnail.png" class="img-fluid">
+                </li>
+            </ul>
+            <div id="gridder-content-1" class="gridder-content">
+                <script>
+                    function playnow() {
+                        var video = document.getElementById("vid1");
+                        video.play();
+                        console.log("play");
+                    }
+                </script>
+                <div class="row">
+                    <div class="col videofullscreen">
+                      <video id="vid1" class="videoplayer" width="100%" height="100%" controls loop allowfullscreen onfocus="playnow()">
+                        <source src="content/1/video.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                          Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2 id= "title-1">Title</h2>
+                        <p id="description-1">Student 1,
+                          Student 2,
+                          Student 3
+                          Student 4</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/jquery.gridder.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+
+                // REMOVE AND ADD CLICK EVENT
+                $('.doAddItem').on('click', function () {
+                    $(".gridder").data('gridderExpander').gridderAddItem('TEST');
+                });
+
+                // Call Gridder
+                $(".gridder").gridderExpander({
+                    scrollOffset: -10,
+                    scrollTo: "panel", // "panel" or "listitem"
+                    animationSpeed: 400,
+                    animationEasing: "easeInOutExpo",
+                    nextText: "<span></span>",
+                    prevText: "<span></span>",
+                    closeText: "<span></span>",
+                    onStart: function () {
+                        console.log("Gridder Inititialized");
+                    },
+                    onExpanded: function (object) {
+                        console.log("Gridder Expanded");
+                    },
+                    onContent: function (object) {
+                      console.log("Gridder Content");
+                      let videoPlayer = $(".selectedItem").data("griddercontent");
+                      var res = videoPlayer.replace("#gridder-content-", "");
+                      setupPlayer(res);
+                  },
+                    onChanged: function (object) {
+                        console.log("Gridder Changed");
+                    },
+                    onClosed: function () {
+                        console.log("Gridder Closed");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
