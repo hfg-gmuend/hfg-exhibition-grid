@@ -11,36 +11,28 @@
         <link href="css/grid.css" rel="stylesheet">
     </head>
     <body class="algorithm" onload="init()">
-        <div class="wrapper headline">
+        <div class="wrapper headline left">
             <h1>Project Name<br>Subject Name</h1>
             <h3>SoSe 2018, Prof. XX</h3>
         </div>
+        <div class="wrapper headline right"></div>
         <div class="clear"></div>
+
         <div class="wrapper">
             <ul class="gridder">
-                <!-- Grid Item 1 -->
-                <li class="gridder-list" data-griddercontent="#gridder-content-1">
-                    <img src="content/1/thumbnail.png" class="img-fluid">
-                </li>
+              <!-- Grid Item 1 -->
+              <li class="gridder-list" data-griddercontent="#gridder-content-1">
+                <img src="content/1/thumbnail.jpg" class="img-fluid">
+              </li>
             </ul>
+
             <div id="gridder-content-1" class="gridder-content">
-                <script>
-                    function playnow() {
-                        var video = document.getElementById("vid1");
-                        video.play();
-                        console.log("play");
-                    }
-                </script>
                 <div class="row">
                     <div class="col videofullscreen">
-                      <video id="vid1" class="videoplayer" width="100%" height="100%" controls loop allowfullscreen onfocus="playnow()">
-                        <source src="content/1/video.mp4" type="video/mp4">
-                        <source src="movie.ogg" type="video/ogg">
-                          Your browser does not support the video tag.
-                      </video>
+                        <iframe id="iframe-1" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="col-sm-6">
-                        <h2 id= "title-1">Title</h2>
+                        <h2 "title-1">Title</h2>
                         <p id="students-1">Student 1,
                           Student 2,
                           Student 3
@@ -52,7 +44,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -84,9 +75,9 @@
                     },
                     onContent: function (object) {
                       console.log("Gridder Content");
-                      let videoPlayer = $(".selectedItem").data("griddercontent");
-                      var res = videoPlayer.replace("#gridder-content-", "");
-                      setupPlayer(res);
+                      let selectediFrame = $(".selectedItem").data("griddercontent");
+                      var res = selectediFrame.replace("#gridder-content-", "");
+                      setupElement(res);
                   },
                     onChanged: function (object) {
                         console.log("Gridder Changed");
