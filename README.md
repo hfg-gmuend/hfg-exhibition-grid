@@ -49,4 +49,4 @@ Download the folder and populate it as following:
 
 
 
-Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then supply the **Editor** with your content folder.
+> Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then supply the **Editor** with your content folder.
