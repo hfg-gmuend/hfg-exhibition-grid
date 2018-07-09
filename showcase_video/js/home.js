@@ -1,9 +1,13 @@
 function init(){
 
-  //var videoToStyle = document.getElementById("video-player-1");
-  //videoToStyle.setAttribute()
+  const { lstatSync, readdirSync } = require('fs')
+  const { join } = require('../content')
 
-//  setupPlayers();
+  const isDirectory = source => lstatSync(source).isDirectory()
+  const getDirectories = source =>
+    readdirSync(source).map(name => join(source, name)).filter(isDirectory)
+
+  console.log(getDirectories);
 }
 
 function setupPlayer(object){
@@ -16,3 +20,5 @@ function setupPlayer(object){
 function restyleVideo(video){
 
 }
+
+init();
