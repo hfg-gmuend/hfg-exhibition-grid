@@ -17,26 +17,26 @@ function addContentByFolders(){
     var li = document.createElement("LI");
     li.setAttribute("class", "gridder-list")
     li.setAttribute("data-griddercontent", "#gridder-content-" + contentFolders[folder])
-    li.setAttribute("id", "#gridder-content-" + contentFolders[folder] + "-li")
+    li.setAttribute("id", "#gridder-content-" + contentFolders[folder] )
 
     document.getElementById('gridder').appendChild(li);
 
     var img = document.createElement("IMG");
     img.src = "content/" + contentFolders[folder] + "/thumbnail.png"
     img.class = "img-fluid"
-    document.getElementById("#gridder-content-" + contentFolders[folder] + "-li").appendChild(img);
+    document.getElementById("#gridder-content-" + contentFolders[folder] ).appendChild(img);
 
 
     // Create DIV
     var gridderContent = document.createElement("DIV");
-    gridderContent.setAttribute("id", "gridder-content-" + contentFolders[folder] + "-div");
+    gridderContent.setAttribute("id", "gridder-content-" + contentFolders[folder]);
     gridderContent.setAttribute("class", "gridder-content");
     document.getElementById('wrapper').appendChild(gridderContent);
 
     // Create ROW
     var gridderContentRow = document.createElement("DIV");
     gridderContentRow.setAttribute("id", "gridder-content-" + contentFolders[folder] + "-row");
-    document.getElementById("gridder-content-" + contentFolders[folder] + "-div").appendChild(gridderContentRow);
+    document.getElementById("gridder-content-" + contentFolders[folder]).appendChild(gridderContentRow);
 
     // Create Fullscreen
     var gridderContentRowFullscreen = document.createElement("DIV")
@@ -44,50 +44,38 @@ function addContentByFolders(){
     gridderContentRowFullscreen.setAttribute("class", "col videofullscreen")
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row").appendChild(gridderContentRowFullscreen);
 
+    // Create Fullscreen iFrame
     var gridderContentRowFullscreenIframe = document.createElement("IFRAME")
     gridderContentRowFullscreenIframe.setAttribute("id", "iframe-"+contentFolders[folder])
     gridderContentRowFullscreenIframe.setAttribute("frameborder", 0)
     gridderContentRowFullscreenIframe.setAttribute("allowfullscreen", true)
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-fullscreen").appendChild(gridderContentRowFullscreenIframe)
 
-
+    // Create Title Container
     var gridderContentRowTitleContainer = document.createElement("DIV");
     gridderContentRowTitleContainer.setAttribute("id", "gridder-content-" + contentFolders[folder] + "-row-titleContainer-" + contentFolders[folder])
     gridderContentRowTitleContainer.setAttribute("class", "col-sm-6");
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row").appendChild(gridderContentRowTitleContainer);
 
-
-    //contentFolders[folder]
+    // Create Title Container Title
     var gridderContentRowTitleContainerTitle = document.createElement("H2");
     gridderContentRowTitleContainerTitle.setAttribute("id", "title-"+contentFolders[folder])
-    readTextFile("content/"+contentFolders[folder]+"/title.txt",)
+    readTextFile("content/"+contentFolders[folder]+"/title.txt")
     gridderContentRowTitleContainerTitle.innerHTML = text
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-titleContainer-" + contentFolders[folder]).appendChild(gridderContentRowTitleContainerTitle)
 
+    // Create Title Container Paragraph
     var gridderContentRowTitleContainerParagraph = document.createElement("p");
-    readTextFile("content/"+contentFolders[folder]+"/creator.txt",)
+    readTextFile("content/"+contentFolders[folder]+"/creator.txt")
     gridderContentRowTitleContainerParagraph.innerHTML = text;
     gridderContentRowTitleContainerParagraph.setAttribute("id", "students-" + contentFolders[folder])
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-titleContainer-" + contentFolders[folder]).appendChild(gridderContentRowTitleContainerParagraph);
 
-    /*<p id="students-1">Student 1,
-      Student 2,
-      Student 3
-      Student 4</p>*/
 
-  //  console.log(readTextFile("content/"+folder+"/creator.txt"));
-
-    //console.log(text);
-
-    /*var gridderContentRowTitleContainerTitleTextNode = document.createTextNode(creator);
-    console.log(gridderContentRowTitleContainerTitleTextNode);
-    document.getElementById("id", "gridder-content-" + folder + "-row-titleContainer-" + folder + "-title").appendChild(gridderContentRowTitleContainerTitleTextNode)
-*/
-
-
-      /*<li class="gridder-list" data-griddercontent="#gridder-content-1">
-        <img src="content/1/thumbnail.png" class="img-fluid">
-      </li>*/
+    var gridderContentRowDescriptionContainer = document.createElement("DIV");
+    gridderContentRowDescriptionContainer.setAttribute("id", "gridder-content-" + contentFolders[folder] + "-row-descriptionContainer-" + contentFolders[folder])
+    gridderContentRowDescriptionContainer.setAttribute("class", "col-sm-6");
+    document.getElementById("gridder-content-" + contentFolders[folder] + "-row").appendChild(gridderContentRowDescriptionContainer);
 
 
       /*
