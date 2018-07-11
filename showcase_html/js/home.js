@@ -4,7 +4,6 @@ function initGrid(){
   //videoToStyle.setAttribute()
 
 //  setupPlayers();
-  console.log("initrun");
 
   addContentByFolders();
 }
@@ -46,7 +45,7 @@ function addContentByFolders(){
 
     // Create Fullscreen iFrame
     var gridderContentRowFullscreenIframe = document.createElement("IFRAME")
-    gridderContentRowFullscreenIframe.setAttribute("id", "iframe-"+folder)
+    gridderContentRowFullscreenIframe.setAttribute("id", "iframe-"+(folder+1));
     gridderContentRowFullscreenIframe.setAttribute("frameborder", 0)
     gridderContentRowFullscreenIframe.setAttribute("allowfullscreen", true)
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-fullscreen").appendChild(gridderContentRowFullscreenIframe)
@@ -71,20 +70,23 @@ function addContentByFolders(){
     gridderContentRowTitleContainerParagraph.setAttribute("id", "students-" + contentFolders[folder])
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-titleContainer-" + contentFolders[folder]).appendChild(gridderContentRowTitleContainerParagraph);
 
-
+    // Create Description Container
     var gridderContentRowDescriptionContainer = document.createElement("DIV");
     gridderContentRowDescriptionContainer.setAttribute("id", "gridder-content-" + contentFolders[folder] + "-row-descriptionContainer-" + contentFolders[folder])
     gridderContentRowDescriptionContainer.setAttribute("class", "col-sm-6");
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row").appendChild(gridderContentRowDescriptionContainer);
 
+    // Create Description Container H2
     var gridderContentRowDescriptionContainerH2 = document.createElement("H2");
     gridderContentRowDescriptionContainerH2.setAttribute("id", "description-"+contentFolders[folder]+"-h2");
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-descriptionContainer-" + contentFolders[folder]).appendChild(gridderContentRowDescriptionContainerH2);
 
+    // Create Description Container H2 Image
     var gridderContentRowDescriptionContainerH2Image = document.createElement("IMG");
     gridderContentRowDescriptionContainerH2Image.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTIsMEM1LjQsMCwwLDUuNCwwLDEyczUuNCwxMiwxMiwxMnMxMi01LjQsMTItMTJTMTguNiwwLDEyLDB6IE0xMiw1LjhjMC43LDAsMS4zLDAuNiwxLjMsMS4yUzEyLjcsOC4yLDEyLDguMlMxMC44LDcuNywxMC44LDdTMTEuMyw1LjgsMTIsNS44eiBNMTQsMThoLTR2LTFjMC41LTAuMiwxLTAuMiwxLTAuN3YtNC41YzAtMC41LTAuNS0wLjYtMS0wLjh2LTFoM3Y2LjNjMCwwLjUsMC41LDAuNiwxLDAuN1YxOHoiLz48L3N2Zz4=")
     document.getElementById("description-"+contentFolders[folder]+"-h2").appendChild(gridderContentRowDescriptionContainerH2Image);
 
+    // Create Description Container Description
     var gridderContentRowDescriptionContainerDescription = document.createElement("P")
     readTextFile("content/"+contentFolders[folder]+"/description.txt")
     gridderContentRowDescriptionContainerDescription.innerHTML = text
@@ -116,18 +118,9 @@ function addContentByFolders(){
 }
 
 function setupElement(object){
-  console.log("in");
-  console.log(object);
   let objectName = "iframe-" + object;
   let elementToSetTo = document.getElementById(objectName);
-
-  switch (object) {
-    case "1":
-      elementToSetTo.src ='content/1/index.html';
-      break;
-    default:
-    console.log("default");
-  }
+  elementToSetTo.src = "content/"+contentFolders[object-1]+"/index.html"
 }
 
 function readTextFile(file)
@@ -141,8 +134,6 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                //alert(allText);
-                console.log("allText is " + allText);
                 text = allText;
             }
         }
