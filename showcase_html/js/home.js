@@ -47,7 +47,7 @@ function addContentByFolders(){
     var gridderContentRowFullscreenIframe = document.createElement("IFRAME")
     gridderContentRowFullscreenIframe.setAttribute("id", "iframe-"+(folder+1));
     gridderContentRowFullscreenIframe.setAttribute("frameborder", 0)
-    gridderContentRowFullscreenIframe.setAttribute("allowfullscreen", true)
+    gridderContentRowFullscreenIframe.setAttribute("allowfullscreen", "")
     document.getElementById("gridder-content-" + contentFolders[folder] + "-row-fullscreen").appendChild(gridderContentRowFullscreenIframe)
 
     // Create Title Container
