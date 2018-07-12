@@ -13,7 +13,7 @@ If you're the **Editor**, proceed to *Installation*. If you're a **Student**, pr
 1. Download this project as .zip and unpack it
 2. Choose the showcase folder with the correct type of your showcase (HTML, PDF or Video)
 3. Start a webserver. We recommend using [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb) as it allows for the easy creation of a webserver without having to hassle with Terminal commands. You may need to select the showcase folder as root folder within the app
-4. After starting the webserver, open [127.0.0.1:8887](127.0.0.1:8887)
+4. After starting the webserver, open `127.0.0.1:8887`
 
 ## Preparing content folders
 Rename all content folders from 1 to the amount of folders you have. The content will appear in the order of the folder names, i.e. folder 1 will be the first item in the grid, folder 2 the second etc.
