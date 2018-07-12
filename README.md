@@ -27,7 +27,7 @@ Rename all content folders from 1 to the amount of folders you have. The content
 In the main directory, find the content folder that matches your submission. The available types are:
 
 - **showcase_html**, if you created a website
-- **showcase_pdf**, if you created a pdf
+- **showcase_pdf**, if you created a PDF
 - **showcase_video**, if you created a video
 
 Download the folder and populate it as following:
@@ -39,12 +39,12 @@ Download the folder and populate it as following:
 - **thumbnail.png** The thumbnail for your showcase. Create it with the template file in the `Thumbnail Generator` folder.
 
 #### For HTML sites
-- **index.html** The file that runs your project
+- **index.html** The website that runs your project
 
 #### For PDFs
-- **pdf.pdf** The pdf file that shows your project
+- **pdf.pdf** The PDF file that shows your project
 
 #### For Videos
-- **video.mp4** The video file that shows your project
+- **video.mp4** The video that shows your project
 
 Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then send your content folder to your **Editor**.
