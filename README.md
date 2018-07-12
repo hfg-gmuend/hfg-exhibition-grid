@@ -5,7 +5,7 @@ Project showcase kiosk for semester exhibition
 ## Workflow
 Throughout this document we will mention two user groups:
 1. **Editor**: The person that organizes the kiosk, collects the content folders from the student and sets up the site.
-2. **Student**: The persons who have built the projects
+2. **Student**: The persons who built the projects
 
 If you're the **Editor**, proceed to *Installation*. If you're a **Student**, proceed to *Creating a Content Folder*
 
