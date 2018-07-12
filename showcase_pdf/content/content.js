@@ -1,0 +1,1 @@
+var contentFolders = ["1"];
