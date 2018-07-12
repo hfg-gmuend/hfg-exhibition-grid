@@ -95,7 +95,7 @@ function addContentByFolders(){
 function setupElement(object){
   let objectName = "iframe-" + object;
   let elementToSetTo = document.getElementById(objectName);
-  elementToSetTo.src = "content/"+contentFolders[object-1]+"/index.html"
+  elementToSetTo.src = "content/"+contentFolders[object-1]+"/pdf.pdf"
 }
 
 function readTextFile(file)
