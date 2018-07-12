@@ -40,4 +40,4 @@ Download the folder and populate it as following:
 - **pdf.pdf** The pdf file that shows your project
 - **video.mp4** The video file that shows your project
 
-Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then supply the **Editor** with your content folder.
+Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then send your content folder to your **Editor**.
