@@ -24,27 +24,21 @@ Rename all content folders from 1 to the amount of folders you have. The content
 3. The `content` folder also contains a `content.js` file. Enter the names of the content folders here like this: `var contentFolders = ["1","2","3"];`
 
 ## Creating a Content Folder
-In the main directory, find the content folder that matches your submission. The available types are:
+1. In the main directory, find the content folder that matches your submission. The available types are:
 
 - **showcase_html**, if you created a website
 - **showcase_pdf**, if you created a PDF
 - **showcase_video**, if you created a video
 
-Download the folder and populate it as following:
+2. Download the folder and populate it as following:
 
 #### For all types
 - **title.txt** This file holds the title of your project. Enter it in raw text
 - **description.txt** This file holds the description of your project. Enter it in raw text. If you don't have one, just leave it free
 - **creator.txt** This file holds the creators of your project. Enter your name and the ones of your team mates here in raw text.
 - **thumbnail.png** The thumbnail for your showcase. Create it with the template file in the `Thumbnail Generator` folder.
-
-#### For HTML sites
-- **index.html** The website that runs your project
-
-#### For PDFs
-- **pdf.pdf** The PDF file that shows your project
-
-#### For Videos
-- **video.mp4** The video that shows your project
+- **For HTML sites**: **index.html** The website that runs your project
+- **For PDFs**: **pdf.pdf** The PDF file that shows your project
+- **For Videos**: **video.mp4** The video that shows your project
 
 Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then send your content folder to your **Editor**.
