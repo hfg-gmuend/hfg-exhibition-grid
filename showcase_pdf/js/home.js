@@ -1,9 +1,8 @@
+var text;
+
 function initGrid(){
   addContentByFolders();
 }
-
-var text;
-
 
 function addContentByFolders(){
   for (var folder = 0; folder < contentFolders.length; folder++) {
@@ -138,7 +137,7 @@ function idleLogout() {
 
     function resetTimer() {
         clearTimeout(t);
-        t = setTimeout(reloadFunction, 60000);  // time is in milliseconds
+        t = setTimeout(reloadFunction, refreshInterval);  // time is in milliseconds
     }
 }
 
