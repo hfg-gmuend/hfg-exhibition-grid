@@ -41,3 +41,6 @@ Rename all content folders from 1 to the amount of folders you have. The content
 - **For Videos**: **video.mp4** The video that shows your project
 
 Add any related folders you might need. **Make sure that the files names and extensions stay the same!** Then send your content folder to your **Editor**.
+
+## Further customizations
+Within the `content.js` you can set the amount of time of no user interaction until the kiosk should reset itself in miliseconds. The default value is 60000 (one minute).
