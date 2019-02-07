@@ -1,6 +1,7 @@
 # HfG Exhibition Grid
 Project showcase kiosk for semester exhibition
 
+![screenshot](screenshot.png)
 
 ## Workflow
 Throughout this document we will mention two user groups:
