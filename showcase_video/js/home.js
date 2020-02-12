@@ -19,7 +19,13 @@ function addContentByFolders(){
     img.class = "img-fluid"
     document.getElementById("#gridder-content-" + contentFolders[folder] ).appendChild(img);
 
-
+    var gridDescriptor = document.createElement("P");
+    readTextFile("content/"+contentFolders[folder]+"/title.txt");
+    gridDescriptor.innerHTML = "<b>" + text+ "</b><br>";
+    readTextFile("content/"+contentFolders[folder]+"/creator.txt");
+    gridDescriptor.innerHTML += text;
+    document.getElementById("#gridder-content-" + contentFolders[folder] ).appendChild(gridDescriptor);
+ 
     // Create DIV
     var gridderContent = document.createElement("DIV");
     gridderContent.setAttribute("id", "gridder-content-" + contentFolders[folder]);
@@ -115,6 +121,23 @@ function setupPlayer(object){
   console.log(object);
   let objectName = "vid" + object;
   document.getElementById(objectName).play();
+  
+  function onIdle() {
+    document.body.classList.add("idle");
+  }
+  
+  var idleTimeout = window.setTimeout(onIdle, 2000);
+
+  var resetIdleTimer = function() {
+    window.clearTimeout(idleTimeout);
+    document.body.classList.remove("idle");
+    idleTimeout = window.setTimeout(onIdle, 2000);
+  };
+
+  window.onmousemove = resetIdleTimer;
+  window.onmousedown = resetIdleTimer;
+  window.onclick = resetIdleTimer;
+  window.onscroll = resetIdleTimer;
 }
 
 

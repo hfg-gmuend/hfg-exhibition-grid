@@ -1,3 +1,46 @@
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 700;
+	src: url("../fonts/AtlasGrotesk-Black-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Black-Web.woff") format("woff");
+	font-display: swap
+}
+
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 600;
+	src: url("../fonts/AtlasGrotesk-Bold-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Bold-Web.woff") format("woff");
+	font-display: swap
+}
+
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 500;
+	src: url("../fonts/AtlasGrotesk-Medium-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Medium-Web.woff") format("woff");
+	font-display: swap
+}
+
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 400;
+	src: url("../fonts/AtlasGrotesk-Regular-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Regular-Web.woff") format("woff");
+	font-display: swap
+}
+
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 300;
+	src: url("../fonts/AtlasGrotesk-Light-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Light-Web.woff") format("woff");
+	font-display: swap
+}
+
+@font-face {
+	font-family: "AtlasGrotesk";
+	font-weight: 200;
+	src: url("../fonts/AtlasGrotesk-Thin-Web.woff2") format("woff2"), url("../fonts/AtlasGrotesk-Thin-Web.woff") format("woff");
+	font-display: swap
+}
+
+
 .gridder{margin:0px;padding:0px;list-style-type:none}
 .gridder-list,
 .gridder-list-link{display:inline-block;vertical-align:top}
@@ -37,8 +80,17 @@ a:hover {
 .gridder-list,
 .gridder-list-link{cursor:pointer}
 
-.gridder-list:hover,
 .gridder-list-link:hover{opacity:0.8}
+
+
+.gridder-list:hover img {
+	opacity: 0.5;
+}
+
+.gridder-list:hover p {
+	opacity: 1;
+}
+
 
 .hasSelectedItem .gridder-list,
 .hasSelectedItem .gridder-list-link{opacity:.5}
@@ -56,7 +108,7 @@ a:hover {
 * {
 	padding: 0;
 	margin: 0;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'AtlasGrotesk', sans-serif;
 }
 
 body {
@@ -99,20 +151,21 @@ a.gridder-close {
 	font-size: 4em;
 	position: absolute;
 	z-index: 99;
-	background-color: #000;
 }
 a.gridder-close {
-	width: 55px;
-  height: 55px;
-  top: 0;
-  right: 0;
+	width: 64px;
+	height: 64px;
+	top: 0;
+	right: 0;
 	z-index: 999;
+	background-color: #000;
 }
 
 a.gridder-close span {
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjQsMjAuMkwxNS43LDEybDguMi04LjNMMjAuMiwwTDEyLDguM0wzLjcsMC4xTDAsMy44TDguMywxMmwtOC4yLDguM0wzLjgsMjRsOC4yLTguM2w4LjMsOC4yTDI0LDIwLjJ6Ii8+PC9zdmc+) center no-repeat;
-	background-size: 25px 25px;
+	display: inline-block;
+	padding: 10px;
 }
+
 
 .gridder-navigation .gridder-nav {
 	height: 77px;
@@ -139,14 +192,42 @@ a.gridder-close span {
 	overflow: hidden;
 }
 
-.gridder-navigation .gridder-nav.prev {
-	left:-6px;
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
+.gridder-navigation .gridder-nav {
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 64px;
+	height: 64px;
+	background-color: #000;
+	transition: all ease-in-out .4s;
 }
 
 .gridder-navigation .gridder-nav.next {
-	right: -6px;
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Earrow-white%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='arrow-white' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Group' transform='translate(4.000000, 5.000000)' stroke='%23FFFFFF' stroke-width='1.5'%3E%3Cpath d='M1.42108547e-14,7 L15.5,7' id='Line-30' stroke-linecap='square'%3E%3C/path%3E%3Cpolyline id='Path-Copy' fill-rule='nonzero' transform='translate(13.036933, 7.073866) scale(1, -1) rotate(-90.000000) translate(-13.036933, -7.073866) ' points='5.96306693 4.03693307 13.0369331 10.1107992 20.1107992 4.03693307'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gridder-navigation .gridder-nav.prev {
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Earrow-white%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='arrow-white' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Group' transform='translate(4.000000, 5.000000)' stroke='%23FFFFFF' stroke-width='1.5'%3E%3Cpath d='M1.42108547e-14,7 L15.5,7' id='Line-30' stroke-linecap='square'%3E%3C/path%3E%3Cpolyline id='Path-Copy' fill-rule='nonzero' transform='translate(13.036933, 7.073866) scale(1, -1) rotate(-90.000000) translate(-13.036933, -7.073866) ' points='5.96306693 4.03693307 13.0369331 10.1107992 20.1107992 4.03693307'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	transform: rotate(180deg);
+}
+
+.gridder-navigation .gridder-nav.prev {
+	left:-6px;
+}
+
+.gridder-navigation .gridder-nav.next {
+	right:-6px;
+}
+
+.idle .gridder-nav {
+	opacity: 0;
+}
+
+.idle .gridder-nav.prev {
+	transform: translateX(-80px) rotate(180deg);
+}
+
+.idle .gridder-nav.next {
+	transform: translateX(80px);
 }
 
 .gridder-navigation .gridder-nav span,
@@ -156,9 +237,16 @@ a.gridder-close span {
 	height: 100%;
 }
 
-.gridder-navigation .gridder-nav span {
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNSwzbDMuMS0zTDIwLDEyTDguMSwyNEw1LDIxbDktOUw1LDN6Ii8+PC9zdmc+) center no-repeat;
+a.gridder-close {
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='14px' viewBox='0 0 14 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 53 (72520) - https://sketchapp.com --%3E%3Ctitle%3EArtboard%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Artboard' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='close' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cpolygon id='Path' points='7 5.9393398 12.1265242 0.81281566 13.1871843 1.87347584 8.0606602 7 13.1871843 12.1265242 12.1265242 13.1871843 7 8.0606602 1.87347584 13.1871843 0.81281566 12.1265242 5.9393398 7 0.81281566 1.87347584 1.87347584 0.81281566'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-size: 48px 48px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 }
+
+/* .gridder-navigation .gridder-nav span {
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNSwzbDMuMS0zTDIwLDEyTDguMSwyNEw1LDIxbDktOUw1LDN6Ii8+PC9zdmc+) center no-repeat;
+} */
 
 /*a.gridder-nav {
 	margin-right: 20px;
@@ -180,6 +268,19 @@ a.gridder-nav.prev:before {
 	content: "\02190";
 	margin-right: 10px;
 }*/
+
+.gridder-list {
+	position: relative;
+}
+
+.gridder-list p {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	margin: 0;
+	opacity: 0;
+	transition: opacity ease .2s;
+}
 
 .gridder-list,
 .gridder-list-link {
@@ -242,7 +343,8 @@ iframe {
 }
 
 .gridder-list img {
-    width: 100%;
+	width: 100%;
+	transition: opacity ease .2s;
 }
 
 body::-webkit-scrollbar {
