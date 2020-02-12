@@ -19,6 +19,12 @@ function addContentByFolders(){
     img.class = "img-fluid"
     document.getElementById("#gridder-content-" + contentFolders[folder] ).appendChild(img);
 
+    var gridDescriptor = document.createElement("P");
+    readTextFile("content/"+contentFolders[folder]+"/title.txt");
+    gridDescriptor.innerHTML = "<b>" + text+ "</b><br>";
+    readTextFile("content/"+contentFolders[folder]+"/creator.txt");
+    gridDescriptor.innerHTML += text;
+    document.getElementById("#gridder-content-" + contentFolders[folder] ).appendChild(gridDescriptor);
 
     // Create DIV
     var gridderContent = document.createElement("DIV");

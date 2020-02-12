@@ -37,8 +37,17 @@ a:hover {
 .gridder-list,
 .gridder-list-link{cursor:pointer}
 
-.gridder-list:hover,
 .gridder-list-link:hover{opacity:0.8}
+
+
+.gridder-list:hover img {
+	opacity: 0.5;
+}
+
+.gridder-list:hover p {
+	opacity: 1;
+}
+
 
 .hasSelectedItem .gridder-list,
 .hasSelectedItem .gridder-list-link{opacity:.5}
@@ -180,6 +189,19 @@ a.gridder-nav.prev:before {
 	content: "\02190";
 	margin-right: 10px;
 }*/
+
+.gridder-list {
+	position: relative;
+}
+
+.gridder-list p {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	margin: 0;
+	opacity: 0;
+	transition: opacity ease .2s;
+}
 
 .gridder-list,
 .gridder-list-link {
